@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --sizeBox: 30px;
+  --height: 3px;
+  --line-color: #b5773d;
+
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.navElement {
+  font-family: 'Roboto', sans-serif;
+}
+
+.effectBlack::after {
+  content: '';
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background-image: linear-gradient(to top, #000, transparent);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.block-button {
+  padding: calc(0.667em + 2px) calc(1.333em + 2px);
+}
+
+figure figcaption {
+  font-weight: 700;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+}
+
+.container-fluid {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+@media (max-width: 992px) {
+  footer div {
+    display: block;
+  }
+
+  footer .row {
+    display: block;
+  }
+}
+
+.heroe-visibility {
+  position: relative;
+  top: 0;
+  opacity: 1;
+  visibility: visible;
+
+  transition-property: top, opacity, visibility;
+  transition-duration: 400ms;
+  transition-timing-function: ease-in-out;
+}
+
+.heroe-hidden {
+  top: -65px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--sizeBox);
+  width: var(--sizeBox);
+}
+
+.line {
+  position: relative;
+  width: 80%;
+  height: var(--height);
+  background-color: var(--line-color);
+  border-radius: calc(var(--height) / 2);
+  transition: background-color 300ms ease-in-out;
+}
+
+.line::after,
+.line::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--line-color);
+  border-radius: 2px;
+  transition-property: top, transform;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+}
+
+.line::before {
+  top: calc(var(--sizeBox) / 4 * -1 + calc(var(--height) / 2));
+}
+.line::after {
+  top: calc(var(--sizeBox) / 4 - calc(var(--height) / 2));
+}
+
+.box.collapseLine .line {
+  background-color: transparent;
+}
+
+.box.collapseLine .line::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.box.collapseLine .line::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+#menu-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.backMenu {
+  transition: opacity 0.5s ease 0s, height 0s ease;
+}
+
+.backMenu.active {
+  opacity: 0.85;
+  height: 100%;
+  z-index: 10;
+}
