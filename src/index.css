@@ -157,3 +157,32 @@ figure figcaption {
   height: 100%;
   z-index: 10;
 }
+
+.animationCerberus {
+  -webkit-animation: cerberus 3s ease 0s infinite;
+  animation: cerberus 3s ease 0s infinite;
+}
+
+@-webkit-keyframes cerberus {
+  0%,
+  100% {
+    -webkit-filter: brightness(1) contrast(1) saturate(1);
+    filter: brightness(1) contrast(1) saturate(1);
+  }
+  50% {
+    -webkit-filter: brightness(1.4) contrast(1.4) saturate(0.65);
+    filter: brightness(1.4) contrast(1.4) saturate(0.65);
+  }
+}
+
+@keyframes cerberus {
+  0%,
+  100% {
+    -webkit-filter: brightness(1) contrast(1) saturate(1);
+    filter: brightness(1) contrast(1) saturate(1) blur(0);
+  }
+  50% {
+    -webkit-filter: brightness(1.4) contrast(1.4) saturate(0.65) blur(1px);
+    filter: brightness(1.4) contrast(1.4) saturate(0.65) blur(1px);
+  }
+}

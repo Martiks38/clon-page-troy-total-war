@@ -185,7 +185,7 @@ function App() {
                     loading="lazy"
                     src="https://content.totalwar.com/total-war/com.totalwar.www2019/uploads/2021/07/21154843/new-cerberus-1024x576.jpg"
                     alt=""
-                    className="h-auto max-w-[unset] w-full align-middle"
+                    className="h-auto max-w-[unset] w-full align-middle animationCerberus"
                   />
                 </a>
               </figure>

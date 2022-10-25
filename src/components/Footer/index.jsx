@@ -19,7 +19,7 @@ function Footer() {
           </div>
           <div className="mt-8 px-[15px] font-normal md:flex-[0_0_50%] md:max-w-1/2 min-[992px]:pr-0">
             <div className="text-right">
-              <ul className="mb-4 mt-0 text-[18px] leading-[30px] min-[992px]:text-center">
+              <ul className="mb-4 mt-0 text-[18px] leading-[30px] max-[992px]:text-center">
                 <li className="inline-block mr-2">
                   <a
                     target="_blank"
